@@ -1,9 +1,6 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    Render.toggleViewMode()
-})
 let mySprite = Render.getRenderSpriteVariable()
 tiles.setCurrentTilemap(tilemap`level2`)
-tiles.placeOnRandomTile(mySprite, assets.tile`myTile0`)
+tiles.placeOnRandomTile(mySprite, assets.tile`Player_Spawn`)
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -126,3 +123,9 @@ scene.setBackgroundImage(img`
     dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
     dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
     `)
+Render.moveWithController(0)
+
+let roomIndex: number = 0
+controller.player2.A.onEvent(ControllerButtonEvent.Pressed, function(){
+    Render.toggleViewMode()
+})
